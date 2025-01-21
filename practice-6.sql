@@ -1,4 +1,10 @@
 -- How many reviews are written per neighborhood?
+SELECT listings.neighborhood, COUNT(reviews.id) AS total_reviews
+FROM reviews
+JOIN listings ON reviews.listing_id = listings.id
+GROUP BY listings.neighborhood
+ORDER BY listings.neighborhood ASC;
+
 
 -- +------------------------+----------+
 -- | Albany Park            | 2557     |
